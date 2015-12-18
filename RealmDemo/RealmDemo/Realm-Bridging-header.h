@@ -9,6 +9,6 @@
 #ifndef Realm_Bridging_header_h
 #define Realm_Bridging_header_h
 
-#import "Realm.h"
+#import <Realm/Realm.h>
 
 #endif /* Realm_Bridging_header_h */

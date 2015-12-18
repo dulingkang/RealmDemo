@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let mater = MaterialManager.init()
+        print(NSTemporaryDirectory())
         // Do any additional setup after loading the view, typically from a nib.
     }
 

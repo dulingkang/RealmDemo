@@ -24,10 +24,11 @@ struct MaterialManager {
         let realm = RLMRealm.defaultRealm()
         realm.beginWriteTransaction()
         for one in localMaterial {
-            let oneItem = OneItem.init(category: one.0, thumb: one.1, big: one.2)
-            let oneCategory = OneCategory.init(category: one.0, item: oneItem)
+            let oneItem = OneItem.init(category: one.0.rawValue, thumb: one.1, big: one.2)
+            let oneCategory = OneCategory.init(category: one.0.rawValue, item: oneItem)
             realm.addObject(oneItem)
             realm.addObject(oneCategory)
         }
+       try! realm.commitWriteTransaction()
     }
 }

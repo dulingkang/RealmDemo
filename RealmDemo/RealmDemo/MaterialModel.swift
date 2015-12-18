@@ -13,14 +13,17 @@ enum MaterialCategory: String {
 }
 
 class OneItem: RLMObject {
-    var category: MaterialCategory!
-    var thumbnailUrl: String?
-    var bigPicUrl: String?
-    var isLocal = false
-    var landmark: [Float] = []
+    dynamic var category: String?
+    dynamic var thumbnailUrl: String?
+    dynamic var bigPicUrl: String?
+    dynamic var isLocal = false
     
-    init(category: MaterialCategory, thumb: String, big: String) {
+    override init() {
         super.init()
+    }
+    convenience init(category: String, thumb: String, big: String) {
+        self.init()
+        self.category = category
         self.thumbnailUrl = thumb
         self.bigPicUrl = big
     }
@@ -28,12 +31,16 @@ class OneItem: RLMObject {
 
 
 class OneCategory: RLMObject {
-    var category: MaterialCategory!
-    var thumbnailUrl: String?
-    var bigPicUrl: String?
+    var category: String!
+    dynamic var thumbnailUrl: String?
+    dynamic var bigPicUrl: String?
     
-    init(category: MaterialCategory, item: OneItem) {
+    override init() {
         super.init()
+    }
+    
+    convenience init(category: String, item: OneItem) {
+        self.init()
         self.category = category
         self.thumbnailUrl = item.thumbnailUrl
         self.bigPicUrl = item.bigPicUrl
