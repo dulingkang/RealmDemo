@@ -16,6 +16,7 @@
 		3A41A1DF1C23F72C00755F20 /* RealmDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41A1DE1C23F72C00755F20 /* RealmDemoUITests.swift */; };
 		3A41A2D01C240B8800755F20 /* MaterialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41A2CE1C240B8800755F20 /* MaterialManager.swift */; };
 		3A41A2D11C240B8800755F20 /* MaterialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41A2CF1C240B8800755F20 /* MaterialModel.swift */; };
+		3AFEA3171C25075200476A10 /* FaceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFEA3161C25075200476A10 /* FaceData.swift */; };
 		D1239F82FAF0913BE0411E9A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B9B8383F4FADEE169B6932 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		3A41A2C91C23F89700755F20 /* Realm-Bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Realm-Bridging-header.h"; sourceTree = "<group>"; };
 		3A41A2CE1C240B8800755F20 /* MaterialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialManager.swift; sourceTree = "<group>"; };
 		3A41A2CF1C240B8800755F20 /* MaterialModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialModel.swift; sourceTree = "<group>"; };
+		3AFEA3161C25075200476A10 /* FaceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceData.swift; sourceTree = "<group>"; };
 		BBE5B5DBA2E48BD734C11F4B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C662639CA6326AEFD63EAEC6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +146,7 @@
 		3A41A2D21C24235500755F20 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3AFEA3161C25075200476A10 /* FaceData.swift */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AFEA3171C25075200476A10 /* FaceData.swift in Sources */,
 				3A41A1C11C23F72C00755F20 /* ViewController.swift in Sources */,
 				3A41A2D01C240B8800755F20 /* MaterialManager.swift in Sources */,
 				3A41A2D11C240B8800755F20 /* MaterialModel.swift in Sources */,

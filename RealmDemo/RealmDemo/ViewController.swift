@@ -12,8 +12,20 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let mater = MaterialManager.init()
         print(NSTemporaryDirectory())
+        let fullPath = NSTemporaryDirectory() + "/" + "Material.plist"
+        if !NSFileManager.defaultManager().fileExistsAtPath(fullPath) {
+            NSFileManager.defaultManager().createFileAtPath(fullPath, contents: nil, attributes: nil)
+        }
+//        let array = FaceData.sourceLandmark
+//        let dict = NSDictionary.init(object: array, forKey: sourceLandmarkKey)
+        let dict = NSDictionary(contentsOfFile: fullPath)
+        dict?.setValue(30, forKey: "myTest")
+        dict?.writeToFile(fullPath, atomically: true)
+        
+        
+
+//        let mater = MaterialManager.init()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
