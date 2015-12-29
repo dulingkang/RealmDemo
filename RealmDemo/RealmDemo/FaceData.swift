@@ -10,10 +10,11 @@ import UIKit
 import Foundation
 
 let sourceLandmarkKey = "sourceLandmark"
+let X = "x"
+let Y = "y"
 
 struct FaceData {
     
-    var outputLandmark: [Float] = []
     static var sourceLandmark: [String] {
         get {
             let array = [
@@ -22,14 +23,22 @@ struct FaceData {
             return array
         }
     }
-    static func processLandmark(faceArray: NSArray, width: CGFloat, height: CGFloat) {
+    
+    static func processLandmark(faceArray: NSArray, width: CGFloat, height: CGFloat) -> [Float] {
+        var outputLandmark: [Float] = []
         for dict in faceArray {
             let landmarkDict = dict as! NSDictionary
-            self.setAllValues(landmarkDict, width: width, height: height)
+            for i in 0..<self.sourceLandmark.count {
+                let onePoint = landmarkDict[self.sourceLandmark[i]] as! NSDictionary
+                let x = Float(onePoint[X] as! String)!
+                let y = Float(onePoint[Y] as! String)!
+                let wid = x / 100 * Float(width)
+                let hei = y / 100 * Float(height)
+                outputLandmark.append(wid)
+                outputLandmark.append(hei)
+            }
         }
+        return outputLandmark
     }
     
-    static func setAllValues(dict: NSDictionary, width: CGFloat, height: CGFloat) {
-        
-    }
 }

@@ -8,21 +8,24 @@
 
 import Foundation
 
-enum MaterialCategory: String {
-    case Star = "明星", Old = "古装", Fun = "搞怪", Fat = "三胖", Movies = "影视", Sports = "体育"
-}
-
 class OneItem: RLMObject {
+    var id: String?
     dynamic var category: String?
     dynamic var thumbnailUrl: String?
     dynamic var bigPicUrl: String?
-    dynamic var isLocal = false
     
     override init() {
         super.init()
     }
-    convenience init(category: String, thumb: String, big: String) {
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+
+    
+    convenience init(id: String, category: String, thumb: String, big: String) {
         self.init()
+        self.id = id
         self.category = category
         self.thumbnailUrl = thumb
         self.bigPicUrl = big
@@ -31,23 +34,22 @@ class OneItem: RLMObject {
 
 
 class OneCategory: RLMObject {
-    var category: String!
+    dynamic var category: String?
     dynamic var thumbnailUrl: String?
-    dynamic var bigPicUrl: String?
     
     override init() {
         super.init()
     }
     
-    convenience init(category: String, item: OneItem) {
+    override static func primaryKey() -> String? {
+        return "category"
+    }
+    
+    convenience init(category: String, thumb: String) {
         self.init()
         self.category = category
-        self.thumbnailUrl = item.thumbnailUrl
-        self.bigPicUrl = item.bigPicUrl
+        self.thumbnailUrl = thumb
     }
 }
 
-struct AllCategory {
-    var categorys: [OneCategory] = []
-}
 
